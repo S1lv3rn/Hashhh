@@ -1,23 +1,22 @@
-public class Slides{
+import java.util.HashSet;
+import java.util.Set;
+public class Slide {
 
     private ArrayList<String> photos = new ArrayList<>();
-    private ArrayList<String> tags = new ArrayList<>();
+    private Set<String> tags = new HashSet<>();
 
-    Slides(ArrayList<String> photos,ArrayList<String> tags){
-        this.photos=photos;
-        this.tags=tags;
-    }
 
     public ArrayList<String> getPhotos() {
         return  photos;
     }
 
-    public ArrayList<String> getTags() {
+    public Set<String> getTags() {
         return tags;
     }
 
     public void addPhoto(Photos p) {
         photos.add(p);
+        tags.addAll(photos.getTags());
     }
 
     public boolean CheckSize() {
