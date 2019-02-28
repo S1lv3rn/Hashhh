@@ -17,7 +17,9 @@ public class Input {
         inputFiles.add(inputD);
         inputFiles.add(inputE);
 
-        int counter;
+        ArrayList<Photos> photos = new ArrayList<>();
+
+        int counter = 0;
 
         for (String files : inputFiles) {
             File file= new File(files);
@@ -27,8 +29,21 @@ public class Input {
             try {
                 reader = new BufferedReader(new FileReader(file));
 
-                while (reader.readLine() != null) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] info = line.split(" ");
+                    String orientation = info[0];
+                    int id = counter;
+                    ArrayList<String> tags = new ArrayList<>();
+                    int noTag = Integer.parseInt(info[1]);
 
+                    for (int i = 2; i < noTag+2; i++) {
+                        tags.add(info[i]);
+                    }
+                    counter++;
+
+                    Photos photo = new Photos(orientation, id, tags);
+                    photos.add(photo);
                 }
 
             } catch (IOException e) {
