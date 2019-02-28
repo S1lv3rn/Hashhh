@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Photos{
     private String Orienation;
     private int ID;
@@ -10,7 +12,7 @@ public class Photos{
 
     }
 
-    public String getOrienation() {return orienation;}
+    public String getOrienation() {return Orienation;}
     public int ID() {return ID;}
 
     public ArrayList<String> getTags() {
