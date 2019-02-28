@@ -16,23 +16,28 @@ public class Input {
 
         if (args.length > 0) {
             input = args[0];
-            file = new File(input);
+
+            //try {
+              file = new File(input);
+            // } catch (FileNotFoundException e) {
+            //   System.err.println(e.getMessage());
+            // }
             list = main.getPhotos(file);
             processa.process(list);
 
         } else {
 
-            String inputA = "../a_example.txt";
+            // String inputA = "../a_example.txt";
             String inputB = "../b_lovely_landscapes.txt";
-            String inputC = "../c_memorable_moments.txt";
-            String inputD = "../d_pet_pictures.txt";
-            String inputE = "../e_shiny_selfies.txt";
+            // String inputC = "../c_memorable_moments.txt";
+            // String inputD = "../d_pet_pictures.txt";
+            // String inputE = "../e_shiny_selfies.txt";
             ArrayList<String> inputFiles = new ArrayList<>();
-            inputFiles.add(inputA);
+            //inputFiles.add(inputA);
             inputFiles.add(inputB);
-            inputFiles.add(inputC);
-            inputFiles.add(inputD);
-            inputFiles.add(inputE);
+            // inputFiles.add(inputC);
+            // inputFiles.add(inputD);
+            // inputFiles.add(inputE);
 
             for (String i : inputFiles) {
               file = new File(i);

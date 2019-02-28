@@ -8,19 +8,43 @@ public class PhotoManager {
         Output o = new Output();
         ArrayList<Slide> s = new ArrayList<>();
         for (Photos p : photos) {
-          s.add(new Slide());
-          s.get(0).addPhoto(p);
+          Slide sl = new Slide();
+          s.add(sl);
+
+          sl.addPhoto(p);
         }
 
-        o.outputSlides(s);
+
+
+        o.outputSlides(getBest(s));
     }
 
-    // public int calculateTotal(ArrayList<Slide> slideShow){
-    //   int total = 0;
-    //   for(int i = 0; i < slideShow.size(); i++){
-    //     total += interest
-    //   }
-    // }
+    public ArrayList<Slide> getBest(ArrayList<Slide> slides){
+      ArrayList<Slide> bestList = new ArrayList<>();
+      for(int i = 0; i < slides.size(); i++){
+
+        Slide sl = slides.get(i);
+        bestList.add(slides.get(i));
+        slides.remove(i);
+        int max = 0;
+        Slide bestSlide = slides.get(0);
+
+        for(Slide s: slides){
+          if(interest_factor(sl, s) > max) {
+            max = interest_factor(sl, s);
+            bestSlide = s;
+          }
+        }
+        bestList.add(bestSlide);
+
+      }
+
+      return bestList;
+
+
+    }
+
+
 
     public int interest_factor(Slide slide1, Slide slide2){
         int commonTags = compare(slide1, slide2, true);
@@ -42,8 +66,7 @@ public class PhotoManager {
             return slide1.getTags().size() - tags1.size();
         }
         tags1.removeAll(tags2);
-        tags1.size();
-        return 0;
+        return tags1.size();
     }
 
     //finds out the minimum

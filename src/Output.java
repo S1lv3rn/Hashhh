@@ -13,7 +13,7 @@ public class Output {
 
       try {
         BufferedWriter writer = new BufferedWriter(new FileWriter(f));
-        writer.write(slides.size());
+        writer.write(slides.size() + "\n");
 
         for (Slide s : slides) {
           str = "";
@@ -21,7 +21,7 @@ public class Output {
           for (Photos p : s.getPhotos()){
             str += p.ID() + " ";
           }
-          writer.write(str);
+          writer.write(str + "\n");
         }
         writer.close();
 
