@@ -7,7 +7,7 @@ public class Slide {
     private Set<String> tags = new HashSet<>();
 
 
-    public ArrayList<String> getPhotos() {
+    public ArrayList<Photos> getPhotos() {
         return  photos;
     }
 
@@ -17,7 +17,7 @@ public class Slide {
 
     public void addPhoto(Photos p) {
         photos.add(p);
-        tags.addAll(photos.getTags());
+        tags.addAll(p.getTags());
     }
 
     public boolean CheckSize() {

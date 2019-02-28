@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Photos{
     private String Orienation;
     private int ID;
-    private ArrayList<String> tags = new ArrayList<>();
+    private HashSet<String> tags = new HashSet<>();
 
-    Photos(String Orienation, int ID, ArrayList<String> tags ){
+    Photos(String Orienation, int ID, HashSet<String> tags ){
         this.Orienation = Orienation;
         this.ID = ID;
         this.tags = tags;
@@ -15,7 +16,7 @@ public class Photos{
     public String getOrienation() {return Orienation;}
     public int ID() {return ID;}
 
-    public ArrayList<String> getTags() {
+    public HashSet<String> getTags() {
         return tags;
     }
 }

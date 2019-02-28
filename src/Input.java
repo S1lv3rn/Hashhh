@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+
 
 public class Input {
 
@@ -10,9 +12,9 @@ public class Input {
         String input = "";
 
         PhotoManager processa = new PhotoManager();
-        ArrayList<Photos> list;
+        ArrayList<Photos> list = new ArrayList<>();
 
-        if (args.length < 1) {
+        if (args.length > 0) {
             input = args[0];
             file = new File(input);
             list = main.getPhotos(file);
@@ -20,11 +22,11 @@ public class Input {
 
         } else {
 
-            String inputA = "/cs/home/jjyc/Documents/hashcode/Hashhh/a_example.txt";
-            String inputB = "/cs/home/jjyc/Documents/hashcode/Hashhh/b_lovely_landscapes.txt";
-            String inputC = "/cs/home/jjyc/Documents/hashcode/Hashhh/c_memorable_moments.txt";
-            String inputD = "/cs/home/jjyc/Documents/hashcode/Hashhh/d_pet_pictures.txt";
-            String inputE = "/cs/home/jjyc/Documents/hashcode/Hashhh/e_shiny_selfies.txt";
+            String inputA = "../a_example.txt";
+            String inputB = "../b_lovely_landscapes.txt";
+            String inputC = "../c_memorable_moments.txt";
+            String inputD = "../d_pet_pictures.txt";
+            String inputE = "../e_shiny_selfies.txt";
             ArrayList<String> inputFiles = new ArrayList<>();
             inputFiles.add(inputA);
             inputFiles.add(inputB);
@@ -56,11 +58,12 @@ public class Input {
             reader = new BufferedReader(new FileReader(file));
 
             String line;
+            reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] info = line.split(" ");
                 String orientation = info[0];
                 int id = counter;
-                ArrayList<String> tags = new ArrayList<>();
+                HashSet<String> tags = new HashSet<>();
                 int noTag = Integer.parseInt(info[1]);
 
                 for (int i = 2; i < noTag + 2; i++) {

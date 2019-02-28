@@ -6,7 +6,13 @@ public class PhotoManager {
 
     public void process(ArrayList<Photos> photos) {
         Output o = new Output();
-        o.output(photos);
+        ArrayList<Slide> s = new ArrayList<>();
+        for (Photos p : photos) {
+          s.add(new Slide());
+          s.get(0).addPhoto(p);
+        }
+
+        o.outputSlides(s);
     }
 
     // public int calculateTotal(ArrayList<Slide> slideShow){
