@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.Set;
+import java.util.ArrayList;
 public class Slide {
 
     private ArrayList<String> photos = new ArrayList<>();
@@ -20,15 +21,11 @@ public class Slide {
     }
 
     public boolean CheckSize() {
-        if(photos.size()=<2){
+        if(photos.size() <= 2){
             return true;
-        }
 
-         else{
+        } else{
             return false;
         }
     }
-
-
-
 }

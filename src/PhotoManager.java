@@ -1,7 +1,20 @@
 import java.util.HashSet;
 import java.util.Set;
+import java.util.ArrayList;
 
 public class PhotoManager {
+
+    public void process(ArrayList<Photos> photos) {
+        Output o = new Output();
+        o.output(photos);
+    }
+
+    // public int calculateTotal(ArrayList<Slide> slideShow){
+    //   int total = 0;
+    //   for(int i = 0; i < slideShow.size(); i++){
+    //     total += interest
+    //   }
+    // }
 
     public int interest_factor(Slide slide1, Slide slide2){
         int commonTags = compare(slide1, slide2, true);

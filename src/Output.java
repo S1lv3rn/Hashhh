@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class Output {
 
-    public static void outputSlides(ArrayList<Slides> slides){
+    public static void outputSlides(ArrayList<Slide> slides){
       //this prints out
       File f = new File("../output.txt");
       String str;
 
       try {
-        BufferedWriter writer = new BufferedWriter(FileWriter(f));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(f));
         writer.write(slides.size());
 
         for (Slide s : slides) {
@@ -28,7 +28,5 @@ public class Output {
       } catch (IOException e) {
         e.printStackTrace();
       }
-
-
     }
 }

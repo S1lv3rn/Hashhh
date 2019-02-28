@@ -7,11 +7,17 @@ public class Input {
 
         File file = null;
         Input main = new Input();
-        String input;
+        String input = "";
 
-        if (args.length != 0) {
+        PhotoManager processa = new PhotoManager();
+        ArrayList<Photos> list;
+
+        if (args.length < 1) {
             input = args[0];
             file = new File(input);
+            list = main.getPhotos(file);
+            processa.process(list);
+
         } else {
 
             String inputA = "/cs/home/jjyc/Documents/hashcode/Hashhh/a_example.txt";
@@ -26,7 +32,16 @@ public class Input {
             inputFiles.add(inputD);
             inputFiles.add(inputE);
 
+            for (String i : inputFiles) {
+              file = new File(i);
+              list = main.getPhotos(file);
+            }
+            processa.process(list);
         }
+
+
+
+
 
     }
 
