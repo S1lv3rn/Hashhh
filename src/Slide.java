@@ -3,7 +3,7 @@ import java.util.Set;
 import java.util.ArrayList;
 public class Slide {
 
-    private ArrayList<String> photos = new ArrayList<>();
+    private ArrayList<Photos> photos = new ArrayList<>();
     private Set<String> tags = new HashSet<>();
 
 

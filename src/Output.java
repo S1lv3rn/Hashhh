@@ -23,7 +23,7 @@ public class Output {
           }
           writer.write(str);
         }
-        wrter.close();
+        writer.close();
 
       } catch (IOException e) {
         e.printStackTrace();
