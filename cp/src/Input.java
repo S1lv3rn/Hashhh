@@ -28,14 +28,14 @@ public class Input {
         } else {
 
             // String inputA = "../a_example.txt";
-            // String inputB = "../b_lovely_landscapes.txt";
-            String inputC = "/cs/home/jjyc/Documents/hashcode/Hashhh/c_memorable_moments.txt";
+            String inputB = "../b_lovely_landscapes.txt";
+            // String inputC = "../c_memorable_moments.txt";
             // String inputD = "../d_pet_pictures.txt";
             // String inputE = "../e_shiny_selfies.txt";
             ArrayList<String> inputFiles = new ArrayList<>();
             //inputFiles.add(inputA);
-            // inputFiles.add(inputB);
-            inputFiles.add(inputC);
+            inputFiles.add(inputB);
+            // inputFiles.add(inputC);
             // inputFiles.add(inputD);
             // inputFiles.add(inputE);
 
